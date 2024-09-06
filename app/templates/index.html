@@ -34,6 +34,23 @@
 
             <button type="submit" class="btn btn-primary btn-block">Отправить</button>
         </form>
+
+        <!-- Отображение всех введенных профилей -->
+        {% if profiles %}
+        <div class="mt-5">
+            <h2>Список пользователей:</h2>
+            <ul class="list-group">
+                {% for profile in profiles %}
+                <li class="list-group-item">
+                    <strong>Имя:</strong> {{ profile.name }},
+                    <strong>Город:</strong> {{ profile.city }},
+                    <strong>Хобби:</strong> {{ profile.hobby }},
+                    <strong>Возраст:</strong> {{ profile.age }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
     </div>
 
     <!-- Bootstrap JS и jQuery -->
